@@ -1,15 +1,29 @@
-import React from 'react'
+import React from "react";
 
-const Options = ({question}) => {
+const Options = ({ question, dispatch, answer }) => {
+  const hasAnswered = answer !== null;
   return (
     <div className="options">
-        {question.options.map((option, i) => (
-          <button key={i} className="btn btn-option">
-            {option}
-          </button>
-        ))}
-      </div>
-  )
-}
+      {question.options.map((option, i) => (
+        <button
+          className={`btn btn-option 
+            ${i === answer ? "answer" : ""}
+            ${
+              hasAnswered
+                ? i === question.correctOption
+                  ? "correct"
+                  : "wrong"
+                : ""
+            }`}
+          key={i}
+          disabled={hasAnswered}
+          onClick={() => dispatch({ type: "newAnswer", payload: i })}
+        >
+          {option}
+        </button>
+      ))}
+    </div>
+  );
+};
 
-export default Options
+export default Options;

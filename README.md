@@ -15,8 +15,8 @@ Welcome to the **React `useReducer` Practices** repository! This collection demo
 1. **Clone the repo**:
 
    ```bash
-   git clone https://github.com/arman-mokhtari/date-counter.git
-   cd date-counter
+   git clone https://github.com/arman-mokhtari/quiz-reducer.git
+   cd quiz-reducer
    ```
 
 2. **Install dependencies**:
